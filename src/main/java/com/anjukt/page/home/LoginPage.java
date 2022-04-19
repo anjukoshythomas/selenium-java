@@ -5,6 +5,10 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**+
+ * @author Anju Koshy
+ */
+
 public class LoginPage extends AbstractPageObject {
     @FindBy(name = "email")
     private WebElement email;
@@ -23,6 +27,9 @@ public class LoginPage extends AbstractPageObject {
 
     @FindBy(xpath = "//div[contains(text(),'Welcome back!')]")
     private WebElement verifyWelcomeText;
+
+    @FindBy(xpath = "//h1[contains(text(),'Get started')]")
+    private WebElement getStartedText;
 
     @Step
     public void clickSignUp() {
@@ -52,6 +59,11 @@ public class LoginPage extends AbstractPageObject {
     @Step
     public String verifyWelcomeText(){
         return verifyWelcomeText.getText();
+    }
+
+    @Step
+    public String verifyGetStartedTextAfterSignUp(){
+        return getStartedText.getText();
     }
 
 }

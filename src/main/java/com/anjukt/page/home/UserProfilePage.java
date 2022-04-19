@@ -10,6 +10,10 @@ import org.openqa.selenium.support.FindBy;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**+
+ * @author Anju Koshy
+ */
+
 public class UserProfilePage extends AbstractPageObject {
 
     @FindBy(xpath = "//a//span[contains(text(),'test5678@test.com ')]")
@@ -23,6 +27,9 @@ public class UserProfilePage extends AbstractPageObject {
 
     @FindBy(name = "commit")
     private WebElement commit;
+
+    @FindBy(xpath="//h3[contains(text(),'Your profile')]")
+    private WebElement profileText;
 
     @Step
     public void clickUserProfile() {
@@ -46,6 +53,11 @@ public class UserProfilePage extends AbstractPageObject {
     @Step
     public void clickSubmit() {
         commit.click();
+    }
+
+    @Step
+    public String verifyGetStartedTextAfterSignUp(){
+        return profileText.getText();
     }
 
 }

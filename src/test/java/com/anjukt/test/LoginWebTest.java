@@ -28,6 +28,8 @@ public class LoginWebTest  extends BaseWeb {
     public void SignInApp(){
         LoginPage loginPage=new LoginPage();
         loginPage.clickSignUp();
+       assertThat(loginPage.verifyGetStartedTextAfterSignUp())
+               .isEqualTo("Get started");
     }
 
    @Test(description = "Signup CloudApp as new user",priority = 1)
@@ -58,6 +60,8 @@ public class LoginWebTest  extends BaseWeb {
         userPage.clickSettings();
         userPage.chooseFile();
         userPage.clickSubmit();
+        assertThat(userPage.verifyGetStartedTextAfterSignUp())
+                .isEqualTo("Your profile");
     }
 
 
