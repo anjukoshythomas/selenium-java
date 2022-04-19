@@ -89,7 +89,7 @@ To do this you need:
 * Use `-Dsuite=suite_name` to call the suite
 
 ````bash
-mvn test -Pweb-execution -Dsuite=parallel -Dtestng.dtd.http=true 
+mvn test -Pweb-execution -Dsuite=local -Dtestng.dtd.http=true 
 ````
 
 Test results
