@@ -91,3 +91,7 @@ To do this you need:
 ````bash
 mvn test -Pweb-execution -Dsuite=parallel -Dtestng.dtd.http=true 
 ````
+
+Test results
+
+![img.png](img.png)
